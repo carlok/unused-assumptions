@@ -1,0 +1,824 @@
+{
+ "Abelian": [
+  "IsNormalEpiCategory",
+  "IsNormalMonoCategory",
+  "Preadditive"
+ ],
+ "AddCancelCommMonoid": [
+  "AddCommMonoid",
+  "AddLeftCancelMonoid"
+ ],
+ "AddCancelMonoid": [
+  "AddLeftCancelMonoid",
+  "AddRightCancelMonoid"
+ ],
+ "AddCommGroup": [
+  "AddCommMonoid",
+  "AddGroup"
+ ],
+ "AddCommMonoid": [
+  "AddCommSemigroup",
+  "AddMonoid"
+ ],
+ "AddCommMonoidWithOne": [
+  "AddCommMonoid",
+  "AddMonoidWithOne"
+ ],
+ "AddCommSemigroup": [
+  "AddCommMagma",
+  "AddSemigroup"
+ ],
+ "AddGroup": [
+  "SubNegMonoid"
+ ],
+ "AddGroupWithOne": [
+  "AddGroup",
+  "AddMonoidWithOne"
+ ],
+ "AddGrpObj": [
+  "AddMonObj"
+ ],
+ "AddLeftCancelMonoid": [
+  "AddLeftCancelSemigroup",
+  "AddMonoid"
+ ],
+ "AddLeftCancelSemigroup": [
+  "AddSemigroup",
+  "IsLeftCancelAdd"
+ ],
+ "AddMonoid": [
+  "AddSemigroup",
+  "AddZeroClass",
+  "NSMul"
+ ],
+ "AddMonoidWithOne": [
+  "AddMonoid"
+ ],
+ "AddRightCancelMonoid": [
+  "AddMonoid",
+  "AddRightCancelSemigroup"
+ ],
+ "AddRightCancelSemigroup": [
+  "AddSemigroup",
+  "IsRightCancelAdd"
+ ],
+ "AddZeroClass": [
+  "AddZero"
+ ],
+ "Artinian": [
+  "EssentiallySmall"
+ ],
+ "BiheytingAlgebra": [
+  "CoheytingAlgebra",
+  "HeytingAlgebra"
+ ],
+ "BimonObj": [
+  "ComonObj",
+  "MonObj"
+ ],
+ "Bitraversable": [
+  "Bifunctor"
+ ],
+ "BooleanRing": [
+  "Ring"
+ ],
+ "BoundedOrder": [
+  "OrderTop"
+ ],
+ "CStarAlgebra": [
+  "CStarRing",
+  "CompleteSpace",
+  "NormedRing",
+  "StarRing"
+ ],
+ "CancelCommMonoid": [
+  "CommMonoid",
+  "LeftCancelMonoid"
+ ],
+ "CancelMonoid": [
+  "LeftCancelMonoid",
+  "RightCancelMonoid"
+ ],
+ "ChainCompletePartialOrder": [
+  "PartialOrder"
+ ],
+ "CircularOrder": [
+  "CircularPartialOrder"
+ ],
+ "CircularPartialOrder": [
+  "CircularPreorder"
+ ],
+ "CircularPreorder": [
+  "Btw",
+  "SBtw"
+ ],
+ "CoheytingAlgebra": [
+  "GeneralizedCoheytingAlgebra",
+  "HNot",
+  "OrderTop"
+ ],
+ "CommCStarAlgebra": [
+  "CStarAlgebra",
+  "NormedCommRing"
+ ],
+ "CommGroup": [
+  "CommMonoid",
+  "Group"
+ ],
+ "CommGroupWithZero": [
+  "CommMonoidWithZero",
+  "GroupWithZero"
+ ],
+ "CommMonoid": [
+  "CommSemigroup",
+  "Monoid"
+ ],
+ "CommMonoidWithZero": [
+  "CommMonoid",
+  "MonoidWithZero"
+ ],
+ "CommRing": [
+  "CommMonoid",
+  "Ring"
+ ],
+ "CommRingObj": [
+  "IsCommMonObj",
+  "RingObj"
+ ],
+ "CommSemigroup": [
+  "CommMagma",
+  "Semigroup"
+ ],
+ "CommSemiring": [
+  "CommMonoid",
+  "Semiring"
+ ],
+ "CompletableTopField": [
+  "T0Space"
+ ],
+ "CompleteAtomicBooleanAlgebra": [
+  "CompleteBooleanAlgebra"
+ ],
+ "CompleteBooleanAlgebra": [
+  "BooleanAlgebra",
+  "CompleteLattice"
+ ],
+ "CompleteDistribLattice": [
+  "BiheytingAlgebra"
+ ],
+ "CompleteLattice": [
+  "CompleteSemilatticeSup",
+  "Lattice"
+ ],
+ "CompleteLinearOrder": [
+  "BiheytingAlgebra",
+  "CompleteLattice"
+ ],
+ "CompletePartialOrder": [
+  "PartialOrder",
+  "SupSet"
+ ],
+ "CompleteSemilatticeInf": [
+  "InfSet",
+  "PartialOrder"
+ ],
+ "CompleteSemilatticeSup": [
+  "PartialOrder",
+  "SupSet"
+ ],
+ "CompletelyDistribLattice": [
+  "BiheytingAlgebra",
+  "CompleteLattice"
+ ],
+ "ConditionallyCompleteLattice": [
+  "InfSet",
+  "Lattice",
+  "SupSet"
+ ],
+ "ConditionallyCompleteLinearOrderBot": [
+  "ConditionallyCompleteLinearOrder"
+ ],
+ "ConnectedSpace": [
+  "PreconnectedSpace"
+ ],
+ "ContinuousENorm": [
+  "ENorm"
+ ],
+ "DenselyNormedField": [
+  "NormedField"
+ ],
+ "Denumerable": [
+  "Encodable"
+ ],
+ "DistribLattice": [
+  "Lattice"
+ ],
+ "DistribSMul": [
+  "SMulZeroClass"
+ ],
+ "DivInvMonoid": [
+  "Monoid",
+  "ZPow"
+ ],
+ "DivInvOneMonoid": [
+  "DivInvMonoid",
+  "InvOneClass"
+ ],
+ "DivisionCommMonoid": [
+  "CommMonoid",
+  "DivisionMonoid"
+ ],
+ "DivisionMonoid": [
+  "DivInvMonoid",
+  "InvolutiveInv"
+ ],
+ "DivisionSemiring": [
+  "GroupWithZero",
+  "NNRatCast",
+  "Semiring"
+ ],
+ "EMetricSpace": [
+  "PseudoEMetricSpace"
+ ],
+ "ENormedMonoid": [
+  "ESeminormedMonoid"
+ ],
+ "ESeminormedMonoid": [
+  "ContinuousENorm",
+  "Monoid"
+ ],
+ "EnrichedOrdinaryCategory": [
+  "EnrichedCategory"
+ ],
+ "EuclideanDomain": [
+  "CommRing",
+  "Nontrivial"
+ ],
+ "ExtremalEpi": [
+  "Epi"
+ ],
+ "Field": [
+  "CommRing",
+  "DivisionRing"
+ ],
+ "GCommMonoid": [
+  "GMonoid"
+ ],
+ "GCommRing": [
+  "GCommSemiring",
+  "GRing"
+ ],
+ "GCommSemiring": [
+  "GSemiring"
+ ],
+ "GMonoid": [
+  "GMul",
+  "GOne"
+ ],
+ "GMulAction": [
+  "GSMul"
+ ],
+ "GRing": [
+  "GSemiring"
+ ],
+ "GSemiring": [
+  "GNonUnitalNonAssocSemiring"
+ ],
+ "GeneralizedBooleanAlgebra": [
+  "Bot",
+  "DistribLattice"
+ ],
+ "GeneralizedCoheytingAlgebra": [
+  "Lattice"
+ ],
+ "GeneralizedHeytingAlgebra": [
+  "HImp",
+  "Lattice",
+  "OrderTop"
+ ],
+ "GradeBoundedOrder": [
+  "GradeMinOrder"
+ ],
+ "GradeMaxOrder": [
+  "GradeOrder"
+ ],
+ "GradeMinOrder": [
+  "GradeOrder"
+ ],
+ "GradedLieAlgebra": [
+  "SetLike.GradedBracket"
+ ],
+ "Group": [
+  "DivInvMonoid"
+ ],
+ "GroupWithZero": [
+  "DivInvMonoid",
+  "MonoidWithZero",
+  "Nontrivial"
+ ],
+ "GrpObj": [
+  "MonObj"
+ ],
+ "HasAdditiveReduction": [
+  "IsMinimal"
+ ],
+ "HasConicalLimit": [
+  "HasLimit"
+ ],
+ "HasDistribNeg": [
+  "InvolutiveNeg"
+ ],
+ "HasGoodReduction": [
+  "IsMinimal"
+ ],
+ "HasInvolutiveReverse": [
+  "HasReverse"
+ ],
+ "HasLines": [
+  "Nondegenerate"
+ ],
+ "HasMultiplicativeReduction": [
+  "IsMinimal"
+ ],
+ "HasPoints": [
+  "Nondegenerate"
+ ],
+ "HenselianLocalRing": [
+  "IsLocalRing"
+ ],
+ "HeytingAlgebra": [
+  "Compl",
+  "GeneralizedHeytingAlgebra"
+ ],
+ "HopfObj": [
+  "BimonObj"
+ ],
+ "IdemCommSemiring": [
+  "CommSemiring",
+  "IdemSemiring"
+ ],
+ "IdemSemiring": [
+  "SemilatticeSup",
+  "Semiring"
+ ],
+ "InvolutiveStar": [
+  "Star"
+ ],
+ "IrreducibleSpace": [
+  "PreirreducibleSpace"
+ ],
+ "IsAdicComplete": [
+  "IsHausdorff",
+  "IsPrecomplete"
+ ],
+ "IsArtinianScheme": [
+  "CompactSpace",
+  "IsLocallyArtinian"
+ ],
+ "IsCancelAdd": [
+  "IsLeftCancelAdd",
+  "IsRightCancelAdd"
+ ],
+ "IsCancelSMul": [
+  "IsLeftCancelSMul"
+ ],
+ "IsCancelVAdd": [
+  "IsLeftCancelVAdd"
+ ],
+ "IsCofiltered": [
+  "IsCofilteredOrEmpty"
+ ],
+ "IsDedekindDomainDvr": [
+  "IsNoetherian"
+ ],
+ "IsDomain": [
+  "Nontrivial"
+ ],
+ "IsFiltered": [
+  "IsFilteredOrEmpty"
+ ],
+ "IsLocal": [
+  "IsClosedUnderIsomorphisms"
+ ],
+ "IsLocalRing": [
+  "Nontrivial"
+ ],
+ "IsMaximal": [
+  "IsProper"
+ ],
+ "IsMonoidalStable": [
+  "IsMonoidal",
+  "IsStableUnderAssociator"
+ ],
+ "IsNoetherian": [
+  "CompactSpace",
+  "IsLocallyNoetherian"
+ ],
+ "IsOrderedModule": [
+  "PosSMulMono",
+  "SMulPosMono"
+ ],
+ "IsPrime": [
+  "IsProper"
+ ],
+ "IsProper": [
+  "IsSeparated",
+  "LocallyOfFiniteType",
+  "UniversallyClosed"
+ ],
+ "IsRealClosed": [
+  "IsSemireal"
+ ],
+ "IsSimpleAddGroup": [
+  "Nontrivial"
+ ],
+ "IsSimpleGroup": [
+  "Nontrivial"
+ ],
+ "IsSimpleOrder": [
+  "Nontrivial"
+ ],
+ "IsStrictOrderedModule": [
+  "PosSMulStrictMono",
+  "SMulPosStrictMono"
+ ],
+ "IsTopologicalDivisionRing": [
+  "ContinuousInv\u2080",
+  "IsTopologicalRing"
+ ],
+ "KleeneAlgebra": [
+  "IdemSemiring",
+  "KStar"
+ ],
+ "Lattice": [
+  "SemilatticeInf",
+  "SemilatticeSup"
+ ],
+ "LawfulFix": [
+  "Fix"
+ ],
+ "LeftCancelMonoid": [
+  "LeftCancelSemigroup",
+  "Monoid"
+ ],
+ "LeftCancelSemigroup": [
+  "Semigroup"
+ ],
+ "LeftPreLieRing": [
+  "NonUnitalNonAssocRing"
+ ],
+ "LieAdmissibleRing": [
+  "NonUnitalNonAssocRing"
+ ],
+ "LieRing": [
+  "AddCommGroup",
+  "Bracket"
+ ],
+ "LinearOrder": [
+  "PartialOrder"
+ ],
+ "LinearOrderedCommGroupWithZero": [
+  "LinearOrderedCommMonoidWithZero"
+ ],
+ "LinearOrderedCommMonoidWithZero": [
+  "CommMonoidWithZero",
+  "LinearOrder"
+ ],
+ "MetricSpace": [
+  "PseudoMetricSpace"
+ ],
+ "MonadHorizontalComp": [
+  "MonadWhiskerRight"
+ ],
+ "MonadNormalExpr": [
+  "MonadWhiskerLeft"
+ ],
+ "MonadWhiskerLeft": [
+  "MonadHorizontalComp"
+ ],
+ "Monoid": [
+  "MulOneClass",
+  "NPow",
+  "Semigroup"
+ ],
+ "MonoidWithZero": [
+  "Monoid",
+  "MulZeroOneClass",
+  "SemigroupWithZero"
+ ],
+ "MulOneClass": [
+  "MulOne"
+ ],
+ "MulZeroOneClass": [
+  "MulOneClass",
+  "MulZeroClass"
+ ],
+ "Noetherian": [
+  "EssentiallySmall"
+ ],
+ "NonAssocRing": [
+  "NonAssocSemiring",
+  "NonUnitalNonAssocRing"
+ ],
+ "NonAssocSemiring": [
+  "MulZeroOneClass",
+  "NonUnitalNonAssocSemiring"
+ ],
+ "NonPreadditiveAbelian": [
+  "HasZeroMorphisms",
+  "IsNormalMonoCategory"
+ ],
+ "NonUnitalCStarAlgebra": [
+  "CompleteSpace",
+  "NonUnitalNormedRing",
+  "StarRing"
+ ],
+ "NonUnitalCommRing": [
+  "NonUnitalNonAssocCommRing",
+  "NonUnitalRing"
+ ],
+ "NonUnitalCommSemiring": [
+  "CommSemigroup",
+  "NonUnitalSemiring"
+ ],
+ "NonUnitalNonAssocCommSemiring": [
+  "CommMagma",
+  "NonUnitalNonAssocSemiring"
+ ],
+ "NonUnitalNonAssocRing": [
+  "AddCommGroup",
+  "NonUnitalNonAssocSemiring"
+ ],
+ "NonUnitalNonAssocSemiring": [
+  "AddCommMonoid",
+  "Distrib",
+  "MulZeroClass"
+ ],
+ "NonUnitalNormedCommRing": [
+  "NonUnitalCommRing",
+  "NonUnitalNormedRing"
+ ],
+ "NonUnitalNormedRing": [
+  "MetricSpace",
+  "NonUnitalRing",
+  "Norm"
+ ],
+ "NonUnitalRing": [
+  "NonUnitalNonAssocRing",
+  "NonUnitalSemiring"
+ ],
+ "NonUnitalSeminormedRing": [
+  "NonUnitalRing",
+  "Norm"
+ ],
+ "NonUnitalSemiring": [
+  "NonUnitalNonAssocSemiring",
+  "SemigroupWithZero"
+ ],
+ "NontriviallyNormedField": [
+  "NormedField"
+ ],
+ "NormalizedGCDMonoid": [
+  "NormalizationMonoid"
+ ],
+ "NormedAddCommGroup": [
+  "AddCommGroup",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedAddGroup": [
+  "AddGroup",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedCommGroup": [
+  "CommGroup",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedCommRing": [
+  "CommRing",
+  "NormedRing"
+ ],
+ "NormedDivisionRing": [
+  "DivisionRing",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedField": [
+  "Field",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedGroup": [
+  "Group",
+  "MetricSpace",
+  "Norm"
+ ],
+ "NormedRing": [
+  "MetricSpace",
+  "Norm",
+  "Ring"
+ ],
+ "OmegaCompletePartialOrder": [
+  "PartialOrder"
+ ],
+ "Order.Coframe": [
+  "CoheytingAlgebra",
+  "CompleteLattice"
+ ],
+ "Order.Frame": [
+  "CompleteLattice",
+  "HeytingAlgebra"
+ ],
+ "OrderTop": [
+  "Top"
+ ],
+ "PartialOrder": [
+  "Preorder"
+ ],
+ "PerfectlyNormalSpace": [
+  "NormalSpace"
+ ],
+ "PredSubOrder": [
+  "PredOrder"
+ ],
+ "Primcodable": [
+  "Encodable"
+ ],
+ "ProjectivePlane": [
+  "HasLines",
+  "HasPoints"
+ ],
+ "PseudoEMetricSpace": [
+  "EDist"
+ ],
+ "PseudoMetricSpace": [
+  "Dist"
+ ],
+ "Quandle": [
+  "Rack"
+ ],
+ "RCLike": [
+  "DenselyNormedField",
+  "StarRing"
+ ],
+ "Rack": [
+  "Shelf"
+ ],
+ "RankOne": [
+  "RankLeOne"
+ ],
+ "Regular": [
+  "HasFiniteLimits",
+  "IsFiniteMeasureOnCompacts",
+  "OuterRegular"
+ ],
+ "RightCancelMonoid": [
+  "Monoid",
+  "RightCancelSemigroup"
+ ],
+ "RightCancelSemigroup": [
+  "Semigroup"
+ ],
+ "RightPreLieRing": [
+  "NonUnitalNonAssocRing"
+ ],
+ "Ring": [
+  "AddCommGroup",
+  "AddGroupWithOne",
+  "Semiring"
+ ],
+ "RingFilterBasis": [
+  "AddGroupFilterBasis"
+ ],
+ "RingObj": [
+  "AddGrpObj",
+  "IsCommAddMonObj",
+  "MonObj"
+ ],
+ "SMulWithZero": [
+  "SMulZeroClass"
+ ],
+ "Semifield": [
+  "CommGroupWithZero",
+  "CommSemiring",
+  "DivisionSemiring"
+ ],
+ "SemigroupWithZero": [
+  "MulZeroClass",
+  "Semigroup"
+ ],
+ "SemilatticeInf": [
+  "PartialOrder"
+ ],
+ "SemilatticeSup": [
+  "PartialOrder"
+ ],
+ "SeminormedAddCommGroup": [
+  "AddCommGroup",
+  "Norm"
+ ],
+ "SeminormedAddGroup": [
+  "AddGroup",
+  "Norm",
+  "PseudoMetricSpace"
+ ],
+ "SeminormedCommGroup": [
+  "CommGroup",
+  "Norm",
+  "PseudoMetricSpace"
+ ],
+ "SeminormedCommRing": [
+  "CommRing",
+  "SeminormedRing"
+ ],
+ "SeminormedGroup": [
+  "Group",
+  "Norm",
+  "PseudoMetricSpace"
+ ],
+ "SeminormedRing": [
+  "Norm",
+  "PseudoMetricSpace",
+  "Ring"
+ ],
+ "Semiring": [
+  "AddCommMonoid",
+  "MonoidWithZero",
+  "NonUnitalSemiring"
+ ],
+ "StarAddMonoid": [
+  "InvolutiveStar"
+ ],
+ "StarMul": [
+  "InvolutiveStar"
+ ],
+ "StarRing": [
+  "StarMul"
+ ],
+ "StrongNormalizationMonoid": [
+  "NormalizationMonoid"
+ ],
+ "SubNegMonoid": [
+  "AddMonoid",
+  "ZSMul"
+ ],
+ "SubNegZeroMonoid": [
+  "NegZeroClass",
+  "SubNegMonoid"
+ ],
+ "SubtractionCommMonoid": [
+  "AddCommMonoid",
+  "SubtractionMonoid"
+ ],
+ "SubtractionMonoid": [
+  "InvolutiveNeg",
+  "SubNegMonoid"
+ ],
+ "SuccAddOrder": [
+  "SuccOrder"
+ ],
+ "T35Space": [
+  "CompletelyRegularSpace",
+  "T0Space"
+ ],
+ "T3Space": [
+  "RegularSpace",
+  "T0Space"
+ ],
+ "T4Space": [
+  "NormalSpace",
+  "T1Space"
+ ],
+ "T5Space": [
+  "CompletelyNormalSpace",
+  "T1Space"
+ ],
+ "T6Space": [
+  "PerfectlyNormalSpace",
+  "T0Space"
+ ],
+ "UniformSpace": [
+  "TopologicalSpace"
+ ],
+ "UnitalShelf": [
+  "Shelf"
+ ],
+ "UpgradedIsCompletelyMetrizableSpace": [
+  "CompleteSpace",
+  "MetricSpace"
+ ],
+ "UpgradedStandardBorel": [
+  "TopologicalSpace"
+ ],
+ "ValuationRing": [
+  "PreValuationRing"
+ ],
+ "WeaklyRegular": [
+  "OuterRegular"
+ ],
+ "_root_.AddAction.IsPreprimitive": [
+  "AddAction.IsPretransitive"
+ ]
+}

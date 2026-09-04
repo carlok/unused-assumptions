@@ -1,0 +1,11 @@
+--- a/Mathlib/RingTheory/DedekindDomain/Ideal/Basic.lean
++++ b/Mathlib/RingTheory/DedekindDomain/Ideal/Basic.lean
+@@ -47,7 +47,7 @@
+ dedekind domain, dedekind ring
+ -/
+ 
+-variable (R A K : Type*) [CommRing R] [CommRing A] [Field K]
++variable (R A K : Type*) [CommSemiring R] [CommRing A] [Field K]
+ 
+ open scoped nonZeroDivisors Polynomial
+ 

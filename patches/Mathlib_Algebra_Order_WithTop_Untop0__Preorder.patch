@@ -1,0 +1,11 @@
+--- a/Mathlib/Algebra/Order/WithTop/Untop0.lean
++++ b/Mathlib/Algebra/Order/WithTop/Untop0.lean
+@@ -92,7 +92,7 @@
+ 
+ section OrderedAddCommGroup
+ 
+-variable [AddCommGroup α] [PartialOrder α] {a b : WithTop α}
++variable [AddCommGroup α] [Preorder α] {a b : WithTop α}
+ 
+ /--
+ Elements of ordered additive commutative groups are nonnegative iff their untop₀ is nonnegative.

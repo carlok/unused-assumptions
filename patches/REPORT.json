@@ -1,0 +1,338 @@
+{
+  "candidates": 102,
+  "kept": 36,
+  "rejected": 32,
+  "skipped": 34,
+  "rejected_detail": [
+    [
+      "Mathlib.Algebra.BigOperators.Group.List.Defs",
+      "[Monoid M]",
+      "MulOneClass",
+      "Mathlib/Algebra/BigOperators/Group/List/Defs.lean:90:64: error(lean.synthInstanceFa"
+    ],
+    [
+      "Mathlib.Algebra.DirectSum.LinearMap",
+      "[AddCommGroup M]",
+      "AddCommMonoid",
+      "Mathlib/Algebra/DirectSum/LinearMap.lean:83:29: error: Tactic `rewrite` failed: Did"
+    ],
+    [
+      "Mathlib.Algebra.DirectSum.LinearMap",
+      "[CommRing R]",
+      "Ring",
+      "Mathlib/Algebra/DirectSum/LinearMap.lean:55:68: error: Application type mismatch: T"
+    ],
+    [
+      "Mathlib.Algebra.Group.Equiv.Defs",
+      "[MulOneClass P]",
+      "MulOne",
+      "Mathlib/Algebra/Group/Equiv/Defs.lean:464:4: error: Type mismatch"
+    ],
+    [
+      "Mathlib.Algebra.Group.Pointwise.Finset.Basic",
+      "[CommSemigroup \u03b1]",
+      "CommMagma",
+      "Mathlib/Algebra/Group/Pointwise/Finset/Basic.lean:730:2: error(lean.synthInstanceFa"
+    ],
+    [
+      "Mathlib.Algebra.Group.Pointwise.Set.Basic",
+      "[CommSemigroup \u03b1]",
+      "CommMagma",
+      "Mathlib/Algebra/Group/Pointwise/Set/Basic.lean:581:4: error(lean.synthInstanceFaile"
+    ],
+    [
+      "Mathlib.Algebra.Module.Torsion.Basic",
+      "[IsDomain R]",
+      "NoZeroDivisors",
+      "Mathlib/Algebra/Module/Torsion/Basic.lean:840:2: error: `grind` failed"
+    ],
+    [
+      "Mathlib.Analysis.CStarAlgebra.Unitization",
+      "[StarRing \ud835\udd5c]",
+      "StarMul",
+      "Mathlib/Analysis/CStarAlgebra/Unitization.lean:129:10: error(lean.synthInstanceFail"
+    ],
+    [
+      "Mathlib.Analysis.Fourier.FourierTransform",
+      "[NormedAddCommGroup V]",
+      "SeminormedAddCommGroup",
+      "Mathlib/Analysis/Fourier/FourierTransform.lean:207:2: error: unsolved goals"
+    ],
+    [
+      "Mathlib.Combinatorics.SetFamily.AhlswedeZhang",
+      "[DistribLattice \u03b1]",
+      "Lattice",
+      "Mathlib/Combinatorics/SetFamily/AhlswedeZhang.lean:277:68: error: unsolved goals"
+    ],
+    [
+      "Mathlib.FieldTheory.RatFunc.AsPolynomial",
+      "[LinearOrderedCommGroupWithZero \u0393]",
+      "LinearOrderedCommMonoidWithZero",
+      "Mathlib/FieldTheory/RatFunc/AsPolynomial.lean:327:78: error(lean.invalidDottedIdent"
+    ],
+    [
+      "Mathlib.Geometry.Convex.ConvexSpace.Defs",
+      "[LinearOrder K]",
+      "PartialOrder",
+      "Mathlib/Geometry/Convex/ConvexSpace/Defs.lean:191:23: error(lean.synthInstanceFaile"
+    ],
+    [
+      "Mathlib.Geometry.Convex.ConvexSpace.Defs",
+      "[Semifield K]",
+      "CommSemiring",
+      "Mathlib/Geometry/Convex/ConvexSpace/Defs.lean:188:4: error(lean.synthInstanceFailed"
+    ],
+    [
+      "Mathlib.GroupTheory.Coset.Basic",
+      "[Monoid \u03b1]",
+      "MulOneClass",
+      "Mathlib/GroupTheory/Coset/Basic.lean:107:16: error: `simp` made no progress"
+    ],
+    [
+      "Mathlib.GroupTheory.OrderOfElement",
+      "[NonAssocRing R]",
+      "NonAssocSemiring",
+      "Mathlib/GroupTheory/OrderOfElement.lean:1434:41: error: Tactic `rewrite` failed: Di"
+    ],
+    [
+      "Mathlib.MeasureTheory.Group.Measure",
+      "[DivisionMonoid G]",
+      "DivInvMonoid",
+      "Mathlib/MeasureTheory/Group/Measure.lean:376:74: error: `simp` made no progress"
+    ],
+    [
+      "Mathlib.NumberTheory.FLT.Polynomial",
+      "[Field k]",
+      "DivisionRing",
+      "Mathlib/NumberTheory/FLT/Polynomial.lean:49:63: error(lean.synthInstanceFailed): fa"
+    ],
+    [
+      "Mathlib.NumberTheory.MulChar.Lemmas",
+      "[CommRing R]",
+      "CommSemiring",
+      "Mathlib/NumberTheory/MulChar/Lemmas.lean:211:50: error: Application type mismatch: "
+    ],
+    [
+      "Mathlib.Order.BoundedOrder.Lattice",
+      "[OrderTop \u03b1]",
+      "Top",
+      "Mathlib/Order/BoundedOrder/Lattice.lean:37:68: error: Application type mismatch: Th"
+    ],
+    [
+      "Mathlib.Order.Filter.Pointwise",
+      "[MulOneClass \u03b2]",
+      "MulOne",
+      "Mathlib/Order/Filter/Pointwise.lean:530:50: error(lean.synthInstanceFailed): failed"
+    ],
+    [
+      "Mathlib.Order.Interval.Basic",
+      "[PartialOrder \u03b2]",
+      "Preorder",
+      "Mathlib/Order/Interval/Basic.lean:456:65: error: Application type mismatch: The arg"
+    ],
+    [
+      "Mathlib.Order.Interval.Multiset",
+      "[PartialOrder \u03b1]",
+      "Preorder",
+      "Mathlib/Order/Interval/Multiset.lean:230:56: error: Tactic `rewrite` failed: Did no"
+    ],
+    [
+      "Mathlib.RepresentationTheory.Basic",
+      "[Ring k]",
+      "Semiring",
+      "Mathlib/RepresentationTheory/Basic.lean:334:24: error(lean.synthInstanceFailed): fa"
+    ],
+    [
+      "Mathlib.RingTheory.Ideal.GoingUp",
+      "[CommRing S]",
+      "Ring",
+      "Mathlib/RingTheory/Ideal/GoingUp.lean:41:46: error: Tactic `rewrite` failed: Did no"
+    ],
+    [
+      "Mathlib.RingTheory.Ideal.Quotient.Over",
+      "[CommRing S]",
+      "Ring",
+      "Mathlib/RingTheory/Ideal/Quotient/Over.lean:37:5: error(lean.synthInstanceFailed): "
+    ],
+    [
+      "Mathlib.RingTheory.Localization.AsSubring",
+      "[CommRing A]",
+      "CommSemiring",
+      "Mathlib/RingTheory/Localization/AsSubring.lean:69:35: error(lean.synthInstanceFaile"
+    ],
+    [
+      "Mathlib.RingTheory.Polynomial.Chebyshev",
+      "[Field \ud835\udd3d]",
+      "CommRing",
+      "Mathlib/RingTheory/Polynomial/Chebyshev.lean:1053:6: error(lean.synthInstanceFailed"
+    ],
+    [
+      "Mathlib.RingTheory.Polynomial.DegreeLT",
+      "[CommRing R]",
+      "Ring",
+      "Mathlib/RingTheory/Polynomial/DegreeLT.lean:161:51: error(lean.synthInstanceFailed)"
+    ],
+    [
+      "Mathlib.RingTheory.Regular.LinearMap",
+      "[AddCommGroup M]",
+      "AddCommMonoid",
+      "Mathlib/RingTheory/Regular/LinearMap.lean:55:46: error(lean.synthInstanceFailed): f"
+    ],
+    [
+      "Mathlib.RingTheory.Regular.LinearMap",
+      "[CommRing R]",
+      "Ring",
+      "Mathlib/RingTheory/Regular/LinearMap.lean:53:24: error(lean.synthInstanceFailed): f"
+    ],
+    [
+      "Mathlib.RingTheory.SurjectiveOnStalks",
+      "[CommRing T]",
+      "CommSemiring",
+      "Mathlib/RingTheory/SurjectiveOnStalks.lean:108:23: error: Application type mismatch"
+    ],
+    [
+      "Mathlib.Topology.Instances.ENNReal.Lemmas",
+      "[EMetricSpace \u03b2]",
+      "PseudoEMetricSpace",
+      "Mathlib/Topology/Instances/ENNReal/Lemmas.lean:574:2: error(lean.synthInstanceFaile"
+    ]
+  ],
+  "skipped_detail": [
+    [
+      "Mathlib.Algebra.Module.Card",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.BigOperators.Group.List",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.Floor.Semifield",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.Floor.Semifield",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.Star.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.Star.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Order.Sub.Unbundled.Hom",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Polynomial.Module.FiniteDimensional",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Algebra.Ring.NonZeroDivisors",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Analysis.Complex.UpperHalfPlane.FunctionsBoundedAtInfty",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Analysis.Convex.AmpleSet",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Analysis.Normed.Order.Lattice",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.CategoryTheory.Filtered.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Data.Fin.Pigeonhole",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Data.NNRat.Floor",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Data.Nat.DvdSequence",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Geometry.Convex.Cone.Pointed",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.GroupTheory.Congruence.BigOperators",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.LinearIndependent.BaseChange",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.LinearIndependent.Lemmas",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.Matrix.Hermitian",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.Matrix.PosDef",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.Matrix.SemiringInverse",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.LinearAlgebra.Matrix.Symmetric",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.RingTheory.Congruence.BigOperators",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.RingTheory.Ideal.Maps",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.RingTheory.IntegralClosure.Algebra.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.RingTheory.Localization.Basic",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.RingTheory.UniqueFactorizationDomain.Multiplicity",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Topology.Algebra.InfiniteSum.ConditionalInt",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Topology.Algebra.InfiniteSum.Order",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Topology.Connected.PathConnected",
+      "binder is not on a `variable` line"
+    ],
+    [
+      "Mathlib.Topology.Instances.Matrix",
+      "binder is not on a `variable` line"
+    ]
+  ]
+}

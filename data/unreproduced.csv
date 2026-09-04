@@ -1,0 +1,2 @@
+area,module,theorem,binder,stated,holds_over,sweep_verdict,verifier_error,independent_confirmation
+NumberTheory,Mathlib.NumberTheory.MulChar.Duality,MulChar.restrictHom_surjective,[CommRing R],CommRing,CommSemiring,weakens,error: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern,"unstated-conclusions, 2026-09-04: their sweep finds this proof term rests on sorryAx -- Lean inserted it when the tactic failed, so the declaration was still added. Different mechanism from our rewrite failure, same theorem, and the only such row in their 645."

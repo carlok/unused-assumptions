@@ -1,0 +1,11 @@
+--- a/Mathlib/LinearAlgebra/BilinearMap.lean
++++ b/Mathlib/LinearAlgebra/BilinearMap.lean
+@@ -534,7 +534,7 @@
+ 
+ section CommRing
+ 
+-variable {R M : Type*} [CommRing R] [IsDomain R]
++variable {R M : Type*} [CommRing R] [NoZeroDivisors R]
+ 
+ section AddCommGroup
+ 

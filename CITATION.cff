@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this data or these findings, please cite it as below."
+title: "unused-assumptions: theorems in Mathlib whose stated setting exceeds what their proof requires"
+abstract: >-
+  A mechanical search over Mathlib for theorems whose stated algebraic setting is
+  stronger than their own proof needs: replace one instance binder with a weaker
+  class, keep the proof unchanged, compile it alone. Published with the data and
+  a verifier that recompiles every row.
+authors:
+  - family-names: Perassi
+    given-names: Carlo
+type: dataset
+license: Apache-2.0
+repository-code: "https://github.com/carlok/unused-assumptions"
+keywords:
+  - Lean
+  - Mathlib
+  - formalised mathematics
+  - typeclass generalisation

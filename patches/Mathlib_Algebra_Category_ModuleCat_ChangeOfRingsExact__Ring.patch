@@ -1,0 +1,11 @@
+--- a/Mathlib/Algebra/Category/ModuleCat/ChangeOfRingsExact.lean
++++ b/Mathlib/Algebra/Category/ModuleCat/ChangeOfRingsExact.lean
+@@ -25,7 +25,7 @@
+ 
+ universe v u u'
+ 
+-variable {R : Type u} [CommRing R] {R' : Type u'} [CommRing R']
++variable {R : Type u} [Ring R] {R' : Type u'} [CommRing R']
+ 
+ open CategoryTheory
+ 

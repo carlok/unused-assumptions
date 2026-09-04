@@ -1,0 +1,20 @@
+--- a/Mathlib/Analysis/Normed/Field/WithAbs.lean
++++ b/Mathlib/Analysis/Normed/Field/WithAbs.lean
+@@ -87,7 +87,7 @@
+ ### The completion of a field at an absolute value.
+ -/
+ 
+-variable {K : Type*} [Field K] {v : AbsoluteValue K ℝ} {L : Type*} [NormedField L]
++variable {K : Type*} [Field K] {v : AbsoluteValue K ℝ} {L : Type*} [NormedRing L]
+   {f : WithAbs v →+* L}
+ 
+ end WithAbs
+@@ -106,7 +106,7 @@
+ noncomputable instance : Coe K v.Completion where
+   coe k : v.Completion := ↑(toAbs v k)
+ 
+-variable {L : Type*} [NormedField L] [CompleteSpace L] {f : WithAbs v →+* L} {v}
++variable {L : Type*} [NormedRing L] [CompleteSpace L] {f : WithAbs v →+* L} {v}
+ 
+ /-- If the absolute value of a normed field factors through an embedding into another normed field
+ that is locally compact, then the completion of the first normed field is also locally compact. -/

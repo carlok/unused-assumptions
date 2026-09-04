@@ -1,0 +1,11 @@
+--- a/Mathlib/Order/DirSupClosed.lean
++++ b/Mathlib/Order/DirSupClosed.lean
+@@ -300,7 +300,7 @@
+ end LinearOrder
+ 
+ section CompleteLattice
+-variable [CompleteLattice α]
++variable [CompleteSemilatticeSup α]
+ 
+ lemma dirSupClosedOn_iff_forall_sSup : DirSupClosedOn D s ↔
+     ∀ ⦃d⦄, d ∈ D → d ⊆ s → d.Nonempty → DirectedOn (· ≤ ·) d → sSup d ∈ s := by

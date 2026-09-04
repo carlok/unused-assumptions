@@ -1,0 +1,11 @@
+--- a/Mathlib/Algebra/CharP/Algebra.lean
++++ b/Mathlib/Algebra/CharP/Algebra.lean
+@@ -174,7 +174,7 @@
+ 
+ section
+ 
+-variable (K L : Type*) [Field K] [CommSemiring L] [Nontrivial L] [Algebra K L]
++variable (K L : Type*) [Field K] [Semiring L] [Nontrivial L] [Algebra K L]
+ 
+ protected theorem Algebra.charP_iff (p : ℕ) : CharP K p ↔ CharP L p :=
+   (algebraMap K L).charP_iff_charP p

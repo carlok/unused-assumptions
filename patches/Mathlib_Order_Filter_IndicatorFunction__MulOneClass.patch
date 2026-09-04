@@ -1,0 +1,11 @@
+--- a/Mathlib/Order/Filter/IndicatorFunction.lean
++++ b/Mathlib/Order/Filter/IndicatorFunction.lean
+@@ -42,7 +42,7 @@
+ 
+ section Monoid
+ 
+-variable [Monoid M] {s t : Set α} {f g : α → M} {a : α} {l : Filter α}
++variable [MulOneClass M] {s t : Set α} {f g : α → M} {a : α} {l : Filter α}
+ 
+ @[to_additive]
+ theorem mulIndicator_union_eventuallyEq (h : ∀ᶠ a in l, a ∉ s ∩ t) :

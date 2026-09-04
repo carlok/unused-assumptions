@@ -1,0 +1,11 @@
+--- a/Mathlib/Topology/EMetricSpace/Pi.lean
++++ b/Mathlib/Topology/EMetricSpace/Pi.lean
+@@ -22,7 +22,7 @@
+ 
+ open scoped Uniformity Topology NNReal ENNReal Pointwise
+ 
+-variable [PseudoEMetricSpace α]
++variable [EDist α]
+ 
+ open EMetric
+ 

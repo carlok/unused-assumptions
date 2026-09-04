@@ -1,0 +1,11 @@
+--- a/Mathlib/Order/Antichain.lean
++++ b/Mathlib/Order/Antichain.lean
+@@ -291,7 +291,7 @@
+ 
+ section PartialOrder
+ 
+-variable [PartialOrder α] [PartialOrder β] {f : α → β} {s : Set α}
++variable [PartialOrder α] [Preorder β] {f : α → β} {s : Set α}
+ 
+ lemma IsAntichain.of_strictMonoOn_antitoneOn (hf : StrictMonoOn f s) (hf' : AntitoneOn f s) :
+     IsAntichain (· ≤ ·) s :=

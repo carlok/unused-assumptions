@@ -1,0 +1,52 @@
+{
+  "generated": "2026-09-04T03:31:58Z",
+  "survivors": 645,
+  "population": "the union of every weakening table swept; the paper's counts are the hand-written table alone and are smaller",
+  "stores": [
+    "sprint-1",
+    "sprint-2",
+    "sprint-3",
+    "sweep-wide",
+    "sweep-wide-b",
+    "typeclass"
+  ],
+  "areas": [
+    "Algebra",
+    "AlgebraicGeometry",
+    "Analysis",
+    "CategoryTheory",
+    "Combinatorics",
+    "Computability",
+    "Data",
+    "Dynamics",
+    "FieldTheory",
+    "Geometry",
+    "GroupTheory",
+    "LinearAlgebra",
+    "MeasureTheory",
+    "NumberTheory",
+    "Order",
+    "Probability",
+    "RepresentationTheory",
+    "RingTheory",
+    "Topology"
+  ],
+  "corpora": [
+    {
+      "corpus": "Mathlib",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "describes": "chore: bump toolchain to v4.33.1",
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "project_path": null
+    }
+  ],
+  "id_scheme": "sha256('module|theorem|binder_index|to_class')[:16]; stable across runs; contains no revision and no corpus",
+  "key_scheme": "corpus:module:theorem:binder -- deterministic, and the join key across exports. Module is included because theorem names are not unique across modules",
+  "mathlib": {
+    "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "describes": "chore: bump toolchain to v4.33.1"
+  },
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "exported_by": "tools/export.py in this repository",
+  "note": "Every row is relative to the Mathlib revision above. A row that fails to verify against a different revision says nothing about this export."
+}

@@ -1,0 +1,11 @@
+--- a/Mathlib/Analysis/Normed/Group/Seminorm.lean
++++ b/Mathlib/Analysis/Normed/Group/Seminorm.lean
+@@ -602,7 +602,7 @@
+ 
+ section AddCommGroup
+ 
+-variable [AddCommGroup E]
++variable [AddGroup E]
+ 
+ theorem add_bddBelow_range_add {p q : NonarchAddGroupSeminorm E} {x : E} :
+     BddBelow (range fun y => p y + q (x - y)) :=
