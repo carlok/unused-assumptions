@@ -356,6 +356,48 @@ as a known latent bug and then not acted on. The reader who found them had
 neither of our habits and no reason to trust the code, which is the whole
 argument for publishing it.
 
+## Three forms of `open`, folded into one
+
+`opened()` reconstructs the scope a declaration was elaborated in, and it did so
+by collecting every `open` directive in the file, splitting them on whitespace,
+and emitting one `open A B C in` clause. That is right for the common form and
+wrong for two others. `open A (x y)` names a selection; `open A hiding x` names
+an exclusion. Neither can be chained with further namespaces in a single
+command, and splitting on whitespace first turned `hiding` and the hidden name
+into namespaces of their own:
+
+```
+open FractionalIdeal (coeIdeal_mul) Ideal hiding map_mul Module Polynomial in
+```
+
+Lean answers `unexpected identifier; expected command` and never reaches the
+proof, so the row says nothing about the mathematics either way.
+
+**Nothing in our own results depended on it.** The 645 published rows were
+unaffected: exactly one has a selector, it is that row's only directive, so
+there was nothing to chain it with and it verified like the rest. The failure
+needs a selector *and* a second directive, and that combination appears 24 times
+in `data/breaks.jsonl.gz` and nowhere in the survivors.
+
+Which is why we did not find it. Every check we run is over the survivors, and
+the survivors are the population where this bug cannot occur. It was found by
+the `unstated-conclusions` project, consuming the breaks export for the dual
+problem: they recompiled the sources, saw 24 that did not parse, and sent back
+the error blocks rather than the conclusion. Every block failed at the generated
+`open` line and none in the proof, which located it precisely.
+
+Each form is now emitted as its own clause, `open scoped` still last, and three
+tests hold the shape: no command mixes a selector or `hiding` with other
+namespaces, no directive is dropped while separating them, and the scoped clause
+stays after the plain ones. Checked over all 645 survivors and 5,000 break rows:
+no name lost, no malformed command emitted.
+
+**A dataset nobody on this side consumes is a dataset nobody on this side
+tests.** We published the negative data because it was cheap and someone might
+want it. The first person who did found a bug in it within a day.
+
+---
+
 ## A promised re-sweep that would have recovered nothing
 
 The exchange format carries a `blamed` field -- the class Lean could not

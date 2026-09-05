@@ -133,11 +133,22 @@ def opened(row: dict) -> str:
     """
     plain: list[str] = []
     scoped: list[str] = []
+    alone: list[str] = []
     for line in (row.get("opens") or "").splitlines():
         body = line.strip().removeprefix("open ").strip()
         if not body:
             continue
-        (scoped if body.startswith("scoped") else plain).append(body)
+        if body.startswith("scoped"):
+            scoped.append(body)
+        elif "(" in body or " hiding " in body:
+            # `open A (x y)` and `open A hiding x` are their own syntactic
+            # forms and cannot be chained with further namespaces in one
+            # command; merging them produced `open A (x) B hiding y C in`,
+            # which does not parse. Splitting on whitespace first also turned
+            # `hiding` and the hidden name into namespaces of their own.
+            alone.append(body)
+        else:
+            plain.append(body)
     namespace = (row.get("namespace") or "").strip()
     if namespace:
         parts = namespace.split(".")
@@ -150,5 +161,6 @@ def opened(row: dict) -> str:
     # time, raw, ahead of both; verify.py was corrected and this copy was not.
     names = list(dict.fromkeys(" ".join(plain).split()))
     prefix = f"open {' '.join(names)} in\n" if names else ""
+    prefix += "".join(f"open {directive} in\n" for directive in dict.fromkeys(alone))
     prefix += "".join(f"open {directive} in\n" for directive in dict.fromkeys(scoped))
     return prefix

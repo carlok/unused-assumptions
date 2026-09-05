@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 import catalogue
 import density
 import derive_edges
+import leanrun
 import priorart
 import signatures
 import triage
@@ -526,6 +527,62 @@ class PublishedData(unittest.TestCase):
         blob = json.dumps(self.rows) + json.dumps(self.manifest)
         for leak in ("/Users/", "/var/folders", "/private/"):
             self.assertNotIn(leak, blob)
+
+
+class OpenDirectiveForms(unittest.TestCase):
+    """`open` has several syntactic forms and only one of them chains."""
+
+    ROW = {
+        "opens": "open Module Polynomial\n"
+                 "open FractionalIdeal (coeIdeal_mul)\n"
+                 "open Ideal hiding map_mul\n"
+                 "open scoped nonZeroDivisors",
+        "namespace": "",
+    }
+
+    def _emitted(self, text):
+        return [l[len("open "):].removesuffix(" in")
+                for l in text.splitlines() if l.startswith("open ")]
+
+    def test_a_selector_open_is_not_chained_with_other_namespaces(self):
+        """`open A (x) B hiding y C in` does not parse, and splitting the
+        directives on whitespace first turns `hiding` and the hidden name into
+        namespaces of their own. Every emitted command that carries a selector
+        or `hiding` must name exactly one namespace.
+
+        24 rows of the breaks export never parsed for a consumer because of
+        this. Found by the `unstated-conclusions` project, which recompiled
+        them and sent back the error blocks; every one failed at the generated
+        `open` line, not in the proof."""
+        for opened in (verify.opened, leanrun.opened):
+            for command in self._emitted(opened(self.ROW)):
+                if "(" in command or " hiding " in command:
+                    head = command.split("(")[0].split(" hiding ")[0]
+                    self.assertEqual(
+                        len(head.split()), 1,
+                        f"{opened.__module__}.opened emitted {command!r}, which "
+                        "chains a selector or `hiding` with other namespaces")
+
+    def test_no_directive_is_dropped_while_separating_them(self):
+        """Splitting the forms apart must not lose one. The first attempt
+        classified them into a third list and never emitted it."""
+        for opened in (verify.opened, leanrun.opened):
+            out = opened(self.ROW)
+            for name in ("Module", "Polynomial", "FractionalIdeal",
+                         "coeIdeal_mul", "Ideal", "map_mul", "nonZeroDivisors"):
+                self.assertIn(name, out,
+                              f"{opened.__module__}.opened dropped {name}")
+
+    def test_scoped_still_comes_last(self):
+        """`open scoped sigma` resolves as `ArithmeticFunction.sigma` and is an
+        unknown namespace until `ArithmeticFunction` is open."""
+        for opened in (verify.opened, leanrun.opened):
+            commands = self._emitted(opened(self.ROW))
+            scoped = [i for i, c in enumerate(commands) if c.startswith("scoped")]
+            plain = [i for i, c in enumerate(commands) if not c.startswith("scoped")]
+            self.assertTrue(min(scoped) > max(plain),
+                            f"{opened.__module__}.opened put a scoped clause "
+                            "before a plain one")
 
 
 class Verifier(unittest.TestCase):
