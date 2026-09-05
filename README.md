@@ -66,7 +66,7 @@ defect actually lived.
 | `data/unreproduced.csv` | the row that did not reproduce, with the error, kept rather than dropped |
 | `data/root-invariance.jsonl` | our unused/replaceable verdict joined against a companion project's reading of each proof term's root, row by row |
 | `data/replaceable.jsonl` | for each row, whether the original proof was the same one (`unused`) or the tactic found another route (`replaceable`) |
-| `data/breaks.jsonl.gz` | 57,382 rows: where each weakening stopped holding, with the full descent per binder. For consumers doing the dual problem; `docs/exchange-format-response.md` describes the schema |
+| `data/breaks.jsonl.gz` | 57,382 rows: where each weakening stopped holding, with the full descent per binder. For consumers doing the dual problem; `docs/breaks-format.md` describes the schema |
 | `ENGINEERING.md` | the defects found along the way, and how |
 
 Counts live in `data/MANIFEST.json` rather than in this file, because a number typed
