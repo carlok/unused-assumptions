@@ -415,11 +415,11 @@ class PublishedData(unittest.TestCase):
                       "it failed, but not for the reason that matters")
 
     def test_no_tool_imports_the_private_modules(self):
-        """The public copies use leanrun where the private ones use scrutinize.
-        A copied file that still imports scrutinize fails only at runtime, in a
-        stage a stranger reaches after an hour of compiling. Four tools drifted
-        from their private originals at once and this is the cheap half of the
-        check."""
+        """The public copies import leanrun where the private originals import a
+        differently named module. A copied file that still imports the private
+        name fails only at runtime, in a stage a stranger reaches after an hour
+        of compiling. Four tools drifted from their originals at once and this
+        is the cheap half of the check."""
         import pathlib
         # Assembled rather than written out: these are the names of a private
         # sibling project and its driver, and a deny-list is a poor reason to
