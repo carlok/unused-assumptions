@@ -381,7 +381,7 @@ in `data/breaks.jsonl.gz` and nowhere in the survivors.
 
 Which is why we did not find it. Every check we run is over the survivors, and
 the survivors are the population where this bug cannot occur. It was found by
-the `unstated-conclusions` project, consuming the breaks export for the dual
+the [`unstated-conclusions`](https://github.com/carlok/unstated-conclusions) project, consuming the breaks export for the dual
 problem: they recompiled the sources, saw 24 that did not parse, and sent back
 the error blocks rather than the conclusion. Every block failed at the generated
 `open` line and none in the proof, which located it precisely.

@@ -64,7 +64,7 @@ defect actually lived.
 | `tests/` | regression tests, one per shipped defect |
 | `data/verified.txt` | the verifier's own output over the published data: 644 of 645 |
 | `data/unreproduced.csv` | the row that did not reproduce, with the error, kept rather than dropped |
-| `data/root-invariance.jsonl` | our unused/replaceable verdict joined against a companion project's reading of each proof term's root, row by row |
+| `data/root-invariance.jsonl` | our unused/replaceable verdict joined against the [`unstated-conclusions`](https://github.com/carlok/unstated-conclusions) project's reading of each proof term's root, row by row |
 | `data/replaceable.jsonl` | for each row, whether the original proof was the same one (`unused`) or the tactic found another route (`replaceable`) |
 | `data/breaks.jsonl.gz` | 57,382 rows: where each weakening stopped holding, with the full descent per binder. For consumers doing the dual problem; `docs/breaks-format.md` describes the schema |
 | `ENGINEERING.md` | the defects found along the way, and how |
