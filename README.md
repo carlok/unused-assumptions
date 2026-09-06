@@ -219,6 +219,42 @@ is: per declaration this is around fifty times more expensive than reading the
 proof term. What is new here is a bound rather than a refutation. The library
 fits in a few days of one machine.
 
+**Neither method contains the other**, and Best's published Table 1 settles it in
+both directions. Taking every (original, replacement) pair he records ten or more
+times -- 25 of them -- 13 have no counterpart in our substitution table: they
+relax an assumption to a bare operation, an order to its `<`, a module to its
+scalar action, and a table of named structures cannot name a target that is a
+fragment of a class. Conversely a pass that reads one proof term never
+re-elaborates the weakened statement, and 75% of our attempts fail precisely
+there: a sibling assumption demands the class back, nothing typechecks, and
+there is no term to inspect. Where both look at the same edge they agree closely
+-- field to division ring is 23 for him and 25 for us. The per-theorem overlap
+stays unmeasured: his metaprogram targets Lean 3 and Lean 3 mathlib, which is a
+different corpus rather than an older one.
+
+Anshula Gandhi, Anand Rao Tadipatri and Timothy Gowers, *Automatically
+Generalizing Proofs and Statements*, ITP 2025, generalise the **constants** in a
+proof rather than the typeclasses, and set this library aside in one sentence as
+unlikely to benefit. Olivier Pons, *Generalization in Type Theory Based Proof
+Assistants*, 2002, is the earlier root of the analytic branch.
+
+### What is already happening in Mathlib
+
+Two things, and they matter more to this question than the papers do.
+
+`Mathlib/Tactic/Linter/UnusedInstancesInType.lean` has existed since November
+2025. It flags instance hypotheses unused **in the remainder of the type** --
+currently `Decidable*` only, off by default. That is a different target from
+this: a binder the type never mentions is what our pipeline *discards*, as
+`vacuous_instance`, before anything is reported. The two do not overlap in
+findings, and its header says `TODO: add more linters!`.
+
+Maintainers also do this by hand. `#42214`, *chore: remove unused section
+variables*, removed the same unused section variable in a file this sweep
+flagged, and weakened it further than our patch did -- sixteen days after the
+revision everything here is pinned to. It is the only evidence in this
+repository that the kind of change is wanted, and it is not ours.
+
 ## Requirements
 
 Python 3.9 or later (the code uses `dict[str, …]` and `str.removeprefix`). No

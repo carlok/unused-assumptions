@@ -227,5 +227,27 @@
   "holding_on_master": 33,
   "checked_on": "2026-09-06",
   "method": "each patch applied to a clean worktree at this revision, the whole file rebuilt with `lake env lean`, the file restored afterwards. Two controls confirmed the harness rejects: an appended `False := trivial`, and a Monoid->Mul weakening on a real variable line.",
-  "not_established": "these rebuild file by file. A Mathlib PR builds the whole library, and a weakened variable line can break a downstream importer. Untested."
+  "not_established": "these rebuild file by file. A Mathlib PR builds the whole library, and a weakened variable line can break a downstream importer. Untested.",
+  "combinations_checked": {
+    "checked_on": "2026-09-06",
+    "why": "each patch is verified against an unmodified file, so a file carrying two weakenings at once is a claim no per-patch run makes. These are the files where that happens on the demonstration branch.",
+    "method": "both patches applied to a clean checkout at this revision, the whole file rebuilt with `lake env lean`, the file restored afterwards",
+    "results": [
+      {
+        "file": "Mathlib/LinearAlgebra/BilinearMap.lean",
+        "weakenings": 2,
+        "compiles": true
+      },
+      {
+        "file": "Mathlib/RingTheory/Localization/Basic.lean",
+        "weakenings": 2,
+        "compiles": true
+      },
+      {
+        "file": "Mathlib/Algebra/Order/WithTop/Untop0.lean",
+        "weakenings": 2,
+        "compiles": true
+      }
+    ]
+  }
 }
