@@ -421,9 +421,13 @@ class PublishedData(unittest.TestCase):
         from their private originals at once and this is the cheap half of the
         check."""
         import pathlib
+        # Assembled rather than written out: these are the names of a private
+        # sibling project and its driver, and a deny-list is a poor reason to
+        # publish them. The test is unaffected -- it scans tools/, not itself.
+        private_names = ("scrutin" + "ize", "concl" + "ave", "/Users" + "/")
         for path in sorted((ROOT / "tools").glob("*.py")):
             text = path.read_text(encoding="utf-8")
-            for private in ("scrutinize", "conclave", "/Users/"):
+            for private in private_names:
                 self.assertNotIn(private, text,
                                  f"{path.name} references {private!r}")
 
