@@ -4,6 +4,21 @@
 weakens a typeclass on a `variable` line, and **the whole file compiles after
 the change**. That is the claim; nothing here rests on inference.
 
+**One of these compiles and should not be applied.**
+`Mathlib_Order_DirSupClosed__CompleteSemilatticeSup` weakens `[CompleteLattice α]`
+to `[CompleteSemilatticeSup α]`. It builds. But `Order/CompleteLattice/Defs.lean`
+says of that class: *"we rarely use `CompleteSemilatticeSup` (in fact, any such
+object is always a `CompleteLattice`, so it's usually best to start there)"* — so
+the weakening lands somewhere the library deliberately avoids. Raised by Snir
+Broshi (<https://github.com/SnirBroshi>) reading the demonstration branch, and
+withdrawn from it.
+
+The patch stays here, annotated, because it is a true result. Nothing in this
+pipeline asks whether the class a weakening lands in is one anyone wants to land
+in; the gate is the compiler, and the compiler has no opinion about that. It is
+the clearest instance so far of the gap between a weakening that holds and one
+that is wanted.
+
 **Five of these are alternatives, not additions.** Two patches for
 `Algebra/Order/Group/Indicator.lean` and three for `Algebra/Order/WithTop/Untop0.lean`
 rewrite the *same* `variable` line in different directions — one weakens the

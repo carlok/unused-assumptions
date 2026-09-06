@@ -398,6 +398,37 @@ want it. The first person who did found a bug in it within a day.
 
 ---
 
+## The compiler has no opinion about where you land
+
+One of the 36 patches weakens `[CompleteLattice α]` to `[CompleteSemilatticeSup α]`
+in `Order/DirSupClosed.lean`. It compiles. Every gate in this pipeline passes it:
+the axioms are clean, the whole file rebuilds, the prior-art search finds
+nothing, the binder reaches the conclusion, the class really is weaker.
+
+`Order/CompleteLattice/Defs.lean` says, six lines above the class declaration:
+*"Note that we rarely use `CompleteSemilatticeSup` (in fact, any such object is
+always a `CompleteLattice`, so it's usually best to start there)."*
+
+So the weakening is true and lands somewhere the library has decided not to go.
+A reviewer said so in one clause, from memory, on first sight of the diff.
+
+Nothing here can ask that question. The gate is the compiler, and the compiler
+has no view about whether a class is one anybody wants to state a theorem over.
+Neither does term inspection: the same row would survive Best's method for the
+same reason. This is not a defect in the implementation -- it is the boundary of
+what the method can decide, and it took an expert reading the output to make it
+concrete.
+
+The note says in its limitations that we can show a weakening holds and not that
+anyone wants it. This is the first instance of that sentence with a name
+attached, and it arrived within hours of publishing the branch. The patch stays
+in `patches/`, annotated, and was withdrawn from what was offered upstream.
+
+**A result can pass every check you have and still be one nobody should take.**
+Raised by Snir Broshi (<https://github.com/SnirBroshi>).
+
+---
+
 ## "Does not apply" answered a question about text
 
 Re-checking the 36 patches against a later Mathlib produced three that did not

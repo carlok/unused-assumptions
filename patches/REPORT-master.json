@@ -161,7 +161,9 @@
       "patch": "Mathlib_Order_DirSupClosed__CompleteSemilatticeSup",
       "file": "Mathlib/Order/DirSupClosed.lean",
       "outcome": "applied_and_compiles",
-      "seconds": 1.7
+      "seconds": 1.7,
+      "compiles_but_unwanted": true,
+      "note": "Compiles, and should not be applied. The target class is one Mathlib steers away from: Order/CompleteLattice/Defs.lean says 'we rarely use CompleteSemilatticeSup (in fact, any such object is always a CompleteLattice, so it's usually best to start there)'. Raised by Snir Broshi (https://github.com/SnirBroshi) on the Zulip thread. Withdrawn from the demonstration branch; kept here because it is a true result and the point is that being true is not sufficient."
     },
     {
       "patch": "Mathlib_Order_Filter_IndicatorFunction__MulOneClass",
@@ -257,6 +259,12 @@
       "what": "Mathlib_Topology_EMetricSpace_Pi__EDist was recorded as superseded upstream. It was not. The patch text stopped applying after #42688; the weakening did not stop holding, and against the refactored file it drops two binders rather than one.",
       "why_missed": "this run asked whether each patch still applied, and treated 'does not apply' as the end of the question. Applying is a fact about text.",
       "credit": "Snir Broshi (https://github.com/SnirBroshi), from reading the demonstration branch"
+    },
+    {
+      "date": "2026-09-06",
+      "what": "Mathlib_Order_DirSupClosed__CompleteSemilatticeSup compiles but targets a class the library discourages, so it was withdrawn from the branch offered upstream. The patch stays in this directory, annotated.",
+      "why_missed": "nothing in this pipeline asks whether the class a weakening lands in is one anybody wants to land in. The gate is the compiler, and the compiler has no opinion about that.",
+      "credit": "Snir Broshi (https://github.com/SnirBroshi), reviewing the demonstration branch"
     }
   ]
 }
