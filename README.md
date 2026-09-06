@@ -1,5 +1,7 @@
 # unused-assumptions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22549525.svg)](https://doi.org/10.5281/zenodo.22549525)
+
 Theorems in Mathlib whose stated algebraic setting is stronger than their own
 proof requires, found by machine and checkable by you.
 
