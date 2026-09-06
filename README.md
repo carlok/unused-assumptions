@@ -58,7 +58,7 @@ defect actually lived.
 | `data/verified.txt` | the expected verifier output |
 | `data/MANIFEST.json` | **the Mathlib revision every row is relative to**, the toolchain, the counts |
 | `data/areas-*.csv` | per-area counts under each of the two weakening tables, so the density result can be rechecked without the sweep |
-| `paper/note2.pdf` | the argument, ten pages, built from `paper/note2.tex` |
+| `paper/note.pdf` | the argument, ten pages, built from `paper/note.tex` |
 | `paper/catalogue.pdf` | every survivor with the signature Lean prints for it, 57 pages |
 | `tools/` | the sweep. Needs a Mathlib checkout and days of compute; `verify.py --selfcheck` and the tests do not; `export.py` needs both a checkout and the unpublished stores |
 | `tests/` | regression tests, one per shipped defect |
@@ -132,7 +132,7 @@ to be three bugs in the verifier rather than anything about the library --
 
 ## Two counts of "survivors", and why they differ
 
-`data/survivors.csv` and `paper/note2.pdf` do not report the same number, and
+`data/survivors.csv` and `paper/note.pdf` do not report the same number, and
 neither is a mistake.
 
 The data is the **union of both weakening tables** this project sweeps with: a
@@ -157,7 +157,7 @@ counts and which stores it came from.
 ## Rebuilding the paper
 
 ```sh
-cd paper && pdflatex note2.tex && pdflatex note2.tex
+cd paper && pdflatex note.tex && pdflatex note.tex
 cd paper && xelatex catalogue.tex && xelatex catalogue.tex && xelatex catalogue.tex
 ```
 

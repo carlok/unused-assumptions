@@ -482,7 +482,7 @@ class PublishedData(unittest.TestCase):
         believed right and not yet in hand. A borrowed number must carry its
         marker until the merged data lands here, because a figure that arrives
         by email and loses its box reads exactly like one we computed."""
-        tex = (ROOT / "paper" / "note2.tex").read_text(encoding="utf-8")
+        tex = (ROOT / "paper" / "note.tex").read_text(encoding="utf-8")
         borrowed = "99.15" in tex
         marked = "Pending: a second measurement" in tex
         joined = (ROOT / "data" / "root-invariance.jsonl").exists()

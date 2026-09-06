@@ -278,8 +278,8 @@ file; those rows verify like the rest and are reported separately rather than
 folded in.
 
 
-A companion project measured the same question at a different strength, reading
-only the \emph{root} of each proof term --- the lemma the proof ends on --- and
+A companion project \cite{companion} measured the same question at a different
+strength, reading only the \emph{root} of each proof term --- the lemma the proof ends on --- and
 found it unchanged in $99.15\%$ of comparable rows against our
 \unusedPercent{}\% over the whole cited set. The two are nested, and joining
 them row by row leaves the impossible cell empty: no row has a moved root and an
@@ -377,8 +377,8 @@ which is not density among theorems. We do not know what the second would be.
 A weakening that holds is not thereby wanted. Naming conventions speak to a
 library's habits; citations speak to its use.
 
-A companion project counted, over the whole library at our revision, how many
-declarations cite each survivor --- from proof terms, not from names. Of the
+A companion project \cite{companion} counted, over the whole library at our
+revision, how many declarations cite each survivor --- from proof terms, not from names. Of the
 \citedN{} survivors it could join, \citedNever{} are never cited at all:
 \citedNeverPercent{}\%, interval \citedNeverCI{} after correcting for clustering
 by module at a design effect of \citedDeff{}. Against non-survivors \emph{in the
@@ -619,6 +619,7 @@ and cites a lattice inequality and transitivity.
 \end{observation}
 
 \begin{thebibliography}{9}
+\setlength{\itemsep}{0pt}
 \bibitem{best2021} Alex J. Best. \emph{Automatically Generalizing Theorems Using
 Typeclasses}. Workshop on Formal Mathematics for Mathematicians, CICM 2021.
 EasyChair preprint 6216.
@@ -641,6 +642,10 @@ mathematics implemented by AI contributors}. Swept at revision
 
 \bibitem{artifact} Data, tooling and a verifier for every row in this note.
 \url{https://github.com/carlok/unused-assumptions}
+
+\bibitem{companion} The \texttt{unstated-conclusions} project, 2026. Proof-term
+roots and citation counts over the rows of this note; both are published row by
+row in \cite{artifact}.
 
 \bibitem{pons2002} Olivier Pons. \emph{Generalization in Type Theory Based Proof
 Assistants}. Types for Proofs and Programs, LNCS, 2002.

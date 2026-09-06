@@ -196,7 +196,7 @@ result rather than a report.
 Throughput 1,537 attempts an hour on one laptop, which is the answer to Best's
 objection that this is too slow for a library of this size.
 
-Two documents come out of stage 7, both generated: `paper/note2.tex` argues
+Two documents come out of stage 7, both generated: `paper/note.tex` argues
 from four statements, `paper/catalogue.tex` lists all 645 with the signature
 Lean prints for each. Every figure in the note is a macro from `note_tables.py`,
 because prose that spells a number out goes stale quietly. Six hand-written
