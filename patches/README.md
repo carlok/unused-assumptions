@@ -32,6 +32,16 @@ removing the same unused section variable by hand and weakening it further than
 this patch does — and one file was rewritten. Per-patch detail in
 `REPORT-master.json`.
 
+**One of those three was misfiled.** `Topology/EMetricSpace/Pi.lean` was recorded
+as superseded because `#42688` refactored it and the patch text stopped applying.
+The weakening had not stopped holding. Against the refactored file both
+`[TopologicalSpace α]` and `[WeakPseudoEMetricSpace α]` can be replaced by
+`[EDist α]` — two binders for one, stronger than the original patch — and the file
+rebuilds at `633b366493`. Observed by Snir Broshi
+(<https://github.com/SnirBroshi>) reading the demonstration branch; verified by
+recompiling. Whether a patch *applies* is a fact about text, and this run treated
+it as the end of the question.
+
 These compile **file by file**. A Mathlib PR builds the whole library, and a
 weakened `variable` line can break a downstream importer. That is untested here,
 at either revision.

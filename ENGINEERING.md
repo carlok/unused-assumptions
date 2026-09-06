@@ -398,6 +398,35 @@ want it. The first person who did found a bug in it within a day.
 
 ---
 
+## "Does not apply" answered a question about text
+
+Re-checking the 36 patches against a later Mathlib produced three that did not
+carry over, and two of those were recorded as superseded upstream. One was not.
+
+`Topology/EMetricSpace/Pi.lean` had been patched from `PseudoEMetricSpace` to
+`EDist`. Upstream `#42688` then refactored the file to
+`[TopologicalSpace α] [WeakPseudoEMetricSpace α]`, the patch text stopped
+applying, and the run wrote it off. The weakening had not stopped holding.
+Against the refactored file *both* binders can be replaced by `[EDist α]` --
+two for one, stronger than the original patch -- and the file rebuilds.
+
+The runner asked `git apply --check` and treated failure as the end of the
+question. That is a fact about whether a diff's context still matches, and it
+was allowed to stand in for a fact about mathematics. Every other stage of this
+project refuses exactly that substitution: the whole reason a weakening is
+compiled rather than reasoned about is that only the compiler decides. The
+durability check reasoned about text.
+
+Found by Snir Broshi (<https://github.com/SnirBroshi>), reading the
+demonstration branch on Zulip and noticing what the current file could take. He
+had no access to the pipeline and did not need it -- the observation is
+available to anyone reading the file.
+
+**A negative result inherits the question you actually asked.** "Does not apply"
+and "no longer holds" are different findings, and only one of them was measured.
+
+---
+
 ## A patch set that could not be applied as a set
 
 `patches/` ships 36 one-line patches, each verified by rewriting one binder and

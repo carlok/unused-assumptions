@@ -215,7 +215,8 @@
       "patch": "Mathlib_Topology_EMetricSpace_Pi__EDist",
       "file": "Mathlib/Topology/EMetricSpace/Pi.lean",
       "outcome": "does_not_apply",
-      "note": "superseded upstream by #42688, which introduced WeakPseudoEMetricSpace instead"
+      "note": "NOT superseded, as previously recorded here. #42688 refactored the file to [TopologicalSpace a] [WeakPseudoEMetricSpace a], so this patch's text no longer applies -- but the weakening still holds against the new class and is stronger there: both binders can be replaced by [EDist a], and the file rebuilds at 633b366493. Observed by Snir Broshi (https://github.com/SnirBroshi); verified by recompiling.",
+      "still_holds_in_stronger_form": true
     },
     {
       "patch": "Mathlib_Topology_Instances_Sign__Preorder",
@@ -249,5 +250,13 @@
         "compiles": true
       }
     ]
-  }
+  },
+  "corrections": [
+    {
+      "date": "2026-09-06",
+      "what": "Mathlib_Topology_EMetricSpace_Pi__EDist was recorded as superseded upstream. It was not. The patch text stopped applying after #42688; the weakening did not stop holding, and against the refactored file it drops two binders rather than one.",
+      "why_missed": "this run asked whether each patch still applied, and treated 'does not apply' as the end of the question. Applying is a fact about text.",
+      "credit": "Snir Broshi (https://github.com/SnirBroshi), from reading the demonstration branch"
+    }
+  ]
 }
