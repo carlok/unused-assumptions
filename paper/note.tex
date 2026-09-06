@@ -433,14 +433,20 @@ half.
 
 That rejection rate is the useful number. A declaration the search never tried
 can still need the stronger class, and no amount of reasoning over our own
-verdicts finds it --- only building the file does. It is the same lesson as the
-descent floor: a stage that computes something must keep what proved it.
+verdicts finds it --- only building the file does.
 
 The \patchKept{} that survive are one-line changes against a named revision,
-each with the file it belongs to, shipped in \texttt{patches/} with every
-rejection and its first compiler error beside them. They are the smallest
-actionable thing this work produces, and the only part of it a maintainer can
-evaluate without reading the rest.
+shipped in \texttt{patches/} with every rejection and its first compiler error
+beside them. They are the smallest actionable thing this work produces, and the
+only part of it a maintainer can evaluate without reading the rest.
+
+A patch against a pinned revision decays, so we measured the decay. At
+\texttt{\patchStillHoldRev{}}, $804$ commits and a toolchain version later,
+\patchStillHold{} of the \patchKept{} still rebuild their whole file and none
+applied and then failed. Of the three that did not carry over,
+\patchSuperseded{} were superseded upstream in the same direction and one file
+was rewritten. Published as \texttt{patches/REPORT-master.json}; no figure
+elsewhere depends on it.
 
 \section{Relation to prior work}\label{sec:prior}
 
@@ -489,12 +495,16 @@ before anything is counted.
 The library's own search cannot prove them, which is a much weaker statement
 than novelty, and it is the only one we make.
 
-\paragraph{Nobody has said they want these.} None has been offered upstream. The
+\paragraph{Nobody has asked for these.} None has been offered upstream, and the
 difference between a weakening that is true and one that is wanted is the whole
-value of the result, and we have evidence for only the first. What we can offer
-is \patchKept{} one-line patches that a maintainer can apply and check in a
-minute each (Section~\ref{sec:patches}), and the evidence of
-Section~\ref{sec:used} that these theorems are used rather than dead.
+value of the result. We have one piece of evidence on the second and it is not
+ours: within sixteen days of our revision a Mathlib maintainer removed an unused
+section variable in one of the files we patched, by hand, weakening it further
+than we had. The \emph{kind} of change is wanted and gets merged; that is not
+the same as anyone wanting ours. What we can offer is \patchKept{} one-line
+patches a maintainer can check in a minute each (Section~\ref{sec:patches}) and
+the evidence of Section~\ref{sec:used} that these theorems are used rather than
+dead.
 
 \paragraph{Nothing is claimed about how far the gap goes.} Each row records the
 weakest class it is \emph{verified} to prove, and a search below that reached
@@ -621,7 +631,7 @@ and cites a lattice inequality and transitivity.
 
 \small
 \begin{thebibliography}{9}
-\setlength{\itemsep}{0pt}
+\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}
 \bibitem{best2021} Alex J. Best. \emph{Automatically Generalizing Theorems Using
 Typeclasses}. Workshop on Formal Mathematics for Mathematicians, CICM 2021.
 EasyChair preprint 6216.

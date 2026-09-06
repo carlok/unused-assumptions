@@ -398,6 +398,34 @@ want it. The first person who did found a bug in it within a day.
 
 ---
 
+## A control that failed, and looked like the system failing
+
+Re-verifying the 36 patches against a later Mathlib returned 31 compiling and 0
+failing. A category at 0% is a bug until shown otherwise, so a control ran:
+rename `IsSMulRegular` to `IsSMulRegularXXX` throughout a file that had just
+passed, and require the compile to fail.
+
+It compiled. For a moment that read as the harness never really building
+anything, which would have made every one of the 31 meaningless.
+
+The harness was fine. The control was wrong: the rename hit all 46 occurrences
+including the definition, so the file was internally consistent and correct. A
+globally consistent rename is not an error.
+
+Two replacements both fired immediately — appending
+`theorem ... : False := trivial` gave one error, and weakening a real `variable`
+binder from `Monoid R` to `Mul R` gave twelve, `synthInstanceFailed` among them.
+That second one is the exact failure mode being tested for, which is what makes
+it the right control.
+
+**A negative control is code, and it can be wrong in the direction that scares
+you.** The instinct to distrust 0% was correct and the first test of it was not.
+Had the control been trusted, the conclusion would have been that a working
+pipeline was broken -- the mirror image of every other defect on this page,
+where a broken pipeline looked like it worked.
+
+---
+
 ## A promised re-sweep that would have recovered nothing
 
 The exchange format carries a `blamed` field -- the class Lean could not

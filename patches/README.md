@@ -4,6 +4,19 @@
 weakens a typeclass on a `variable` line, and **the whole file compiles after
 the change**. That is the claim; nothing here rests on inference.
 
+**Re-checked against a later Mathlib on 2026-09-06.** At `633b366493`
+(`leanprover/lean4:v4.34.0-rc2`), 804 commits and one toolchain version after
+the pinned revision, **33 of the 36 still rebuild their whole file**; none
+applied and then failed. Two of the three that did not carry over were
+superseded upstream in the same direction — one by `#42214`, a maintainer
+removing the same unused section variable by hand and weakening it further than
+this patch does — and one file was rewritten. Per-patch detail in
+`REPORT-master.json`.
+
+These compile **file by file**. A Mathlib PR builds the whole library, and a
+weakened `variable` line can break a downstream importer. That is untested here,
+at either revision.
+
 ```sh
 cd <your mathlib checkout>
 git apply /path/to/Mathlib_Algebra_CharP_Algebra__Semiring.patch
