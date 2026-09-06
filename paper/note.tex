@@ -17,7 +17,7 @@
 % No subtitle. It restated the abstract's opening sentence, and it named Mathlib
 % where that sentence says "a large formal library" -- which is the phrasing that
 % covers the machine-written corpus in Section 5 as well.
-\title{Assumptions that were never used}
+\title{Assumptions that were never used\thanks{Produced with AI assistance throughout --- tooling, sweep, statistics and drafting --- for which the author is responsible. No claim here rests on a model's judgement: every row is a Lean compile with its axioms checked and every figure is generated from the published data.}}
 \author{Carlo Perassi}
 \date{September 2026}
 
@@ -298,13 +298,14 @@ rows using \texttt{simp} or a similar tactic are replaceable against $12\%$ of
 those using none, $p = 0.36$. Whatever makes a proof replaceable, it is not
 simply that a tactic went looking.
 
-\section{The same rate in a library no human wrote}\label{sec:tauceti}
+\section{The same rate in a library people did not write}\label{sec:tauceti}
 
-If the pattern were a habit of Mathlib's authors, a corpus written by a machine
-should not share it. Tau Ceti \cite{tauceti} is such a corpus --- formal
-mathematics directed by human-written roadmaps, implemented by AI contributors
-and subject to adversarial review, incubated by the Lean FRO and the Mathlib
-Initiative. Swept with the same hand-written table --- 42 of its 48 edges appear in that
+If the pattern were a habit of Mathlib's authors, a corpus whose proofs people
+did not write should not share it. Tau Ceti \cite{tauceti} is the closest thing
+available: formal mathematics implemented by AI contributors from human-written
+roadmaps, under adversarial review, incubated by the Lean FRO and the Mathlib
+Initiative. People set its targets and judge its output but do not write its
+proofs, and it is proofs that carry the assumptions we count. Swept with the same hand-written table --- 42 of its 48 edges appear in that
 store and none outside it --- it yields \tauSurvivors{} survivors from
 \tauAttempts{} attempts, \tauYield{}\%, against \allYield{}\% over the full
 hand-table sweep here. Intervals \tauYieldCI{} and \allYieldCI{}; Fisher exact,
@@ -618,6 +619,7 @@ $\sqcap$. Both are stated in the library over a field. Each proof is one line,
 and cites a lattice inequality and transitivity.
 \end{observation}
 
+\small
 \begin{thebibliography}{9}
 \setlength{\itemsep}{0pt}
 \bibitem{best2021} Alex J. Best. \emph{Automatically Generalizing Theorems Using
