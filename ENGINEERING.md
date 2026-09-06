@@ -398,6 +398,36 @@ want it. The first person who did found a bug in it within a day.
 
 ---
 
+## A patch set that could not be applied as a set
+
+`patches/` ships 36 one-line patches, each verified by rewriting one binder and
+rebuilding the whole file. Building a branch from all of them applied 28.
+
+Nothing had gone wrong with the eight. Three were known not to apply to current
+master and two needed a rebase, but the other three were something the
+per-patch report could not see: two patches for `Indicator.lean` and three for
+`Untop0.lean` rewrite the *same* `variable` line in different directions -- one
+weakens the algebraic class, another weakens the order. They are alternatives.
+Applied in sequence the first one moves the context and the rest silently fail,
+which `git apply` reports and a loop that ignores its exit status does not.
+
+Each patch is true. The set is not a set.
+
+The report was per-patch because every stage of this project is per-row, and a
+row is the unit the compiler decides. A patch directory implies something a row
+never did -- that the contents can be taken together -- and nothing checked
+that implication until a branch was built from it.
+
+`patches/README.md` now says which are alternatives, and three tests hold the
+shape: alternatives must be documented wherever they exist, every patch touches
+exactly one file, and every changed line is a `variable` line.
+
+**A collection inherits none of the guarantees of its members.** Thirty-six
+verified patches do not make a verified patch set, and where a file ends up with
+two weakenings at once, that combination is a claim nothing here has compiled.
+
+---
+
 ## A control that failed, and looked like the system failing
 
 Re-verifying the 36 patches against a later Mathlib returned 31 compiling and 0

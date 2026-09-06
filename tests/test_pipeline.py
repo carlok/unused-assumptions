@@ -533,6 +533,61 @@ class PublishedData(unittest.TestCase):
             self.assertNotIn(leak, blob)
 
 
+class PatchSetShape(unittest.TestCase):
+    """The patch directory is not a set you can apply wholesale."""
+
+    def _by_file(self):
+        import collections, re
+        groups = collections.defaultdict(list)
+        for path in sorted((ROOT / "patches").glob("*.patch")):
+            text = path.read_text(encoding="utf-8")
+            target = re.search(r"^\+\+\+ b/(.*)$", text, re.M).group(1)
+            removed = tuple(l[1:] for l in text.splitlines()
+                            if l.startswith("-") and not l.startswith("---"))
+            groups[target].append((path.stem, removed))
+        return groups
+
+    def test_alternatives_are_documented(self):
+        """Two patches for Indicator.lean and three for Untop0.lean rewrite the
+        same `variable` line in different directions. Applied in sequence the
+        later ones silently do not apply, because the first moved the context --
+        which is how a branch built from all 36 quietly became 28. Whenever such
+        a pair exists, the README must say so."""
+        import collections
+        clashing = set()
+        for target, items in self._by_file().items():
+            if len(items) < 2:
+                continue
+            lines = collections.defaultdict(list)
+            for name, removed in items:
+                for line in removed:
+                    lines[line].append(name)
+            if any(len(names) > 1 for names in lines.values()):
+                clashing.add(target)
+        if clashing:
+            readme = (ROOT / "patches" / "README.md").read_text(encoding="utf-8")
+            self.assertIn("alternatives, not additions", readme,
+                          "patches rewrite the same line in different ways and "
+                          f"the README does not say so: {sorted(clashing)}")
+
+    def test_every_patch_touches_exactly_one_file(self):
+        """A one-line patch that spans files is not a one-line patch."""
+        for target, items in self._by_file().items():
+            for name, _ in items:
+                text = (ROOT / "patches" / f"{name}.patch").read_text(encoding="utf-8")
+                self.assertEqual(text.count("+++ b/"), 1, f"{name} touches several files")
+
+    def test_every_patch_changes_only_variable_lines(self):
+        """The claim is that each change is one typeclass on one `variable`
+        line. A patch that edits a declaration is a different kind of thing and
+        would need a different kind of evidence."""
+        for path in sorted((ROOT / "patches").glob("*.patch")):
+            for line in path.read_text(encoding="utf-8").splitlines():
+                if line[:1] in "+-" and line[:3] not in ("+++", "---"):
+                    self.assertTrue(line[1:].lstrip().startswith("variable"),
+                                    f"{path.stem} changes a non-variable line: {line[:70]}")
+
+
 class OpenDirectiveForms(unittest.TestCase):
     """`open` has several syntactic forms and only one of them chains."""
 

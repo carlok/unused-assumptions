@@ -4,6 +4,22 @@
 weakens a typeclass on a `variable` line, and **the whole file compiles after
 the change**. That is the claim; nothing here rests on inference.
 
+**Five of these are alternatives, not additions.** Two patches for
+`Algebra/Order/Group/Indicator.lean` and three for `Algebra/Order/WithTop/Untop0.lean`
+rewrite the *same* `variable` line in different directions — one weakens the
+algebraic class, another weakens the order. Each was verified on its own against
+an unmodified file. They cannot be applied together, and applying them in
+sequence silently drops the later ones because the earlier one moved the
+context. Pick one per line.
+
+The two patches for `LinearAlgebra/BilinearMap.lean` target different lines and
+do coexist.
+
+**Each patch is verified alone.** Where a file ends up carrying more than one
+weakening at once, that combination is a separate claim and is only as good as
+whatever compiled it. `REPORT-master.json` records per-patch results, not
+per-combination ones.
+
 **Re-checked against a later Mathlib on 2026-09-06.** At `633b366493`
 (`leanprover/lean4:v4.34.0-rc2`), 804 commits and one toolchain version after
 the pinned revision, **33 of the 36 still rebuild their whole file**; none
