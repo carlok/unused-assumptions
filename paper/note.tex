@@ -443,10 +443,16 @@ only part of it a maintainer can evaluate without reading the rest.
 A patch against a pinned revision decays, so we measured the decay. At
 \texttt{\patchStillHoldRev{}}, $804$ commits and a toolchain version later,
 \patchStillHold{} of the \patchKept{} still rebuild their whole file and none
-applied and then failed. Of the three that did not carry over,
-\patchSuperseded{} were superseded upstream in the same direction and one file
-was rewritten. Published as \texttt{patches/REPORT-master.json}; no figure
-elsewhere depends on it.
+applied and then failed. Of the three that did not, one was superseded upstream
+in the same direction, one file was rewritten, and one we had misfiled: its
+patch text stopped applying after a refactor, but the weakening still holds
+against the class that replaced it, and holds more strongly, dropping two
+binders where the patch dropped one. So \patchFindingsHold{} of the findings
+survive and \patchStillHold{} of the patches do. That distinction is the
+section's own lesson turned on us --- whether a diff applies is a fact about
+text --- and it was a reader of the published branch who caught it, not this
+pipeline. Published as \texttt{patches/REPORT-master.json}; no figure elsewhere
+depends on it.
 
 \section{Relation to prior work}\label{sec:prior}
 
