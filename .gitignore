@@ -8,3 +8,7 @@ paper/*.fdb_latexmk
 paper/*.xdv
 paper/*.toc
 .DS_Store
+
+# Working drafts for upstream PRs and messages: other people's contact details,
+# unsent prose, and text that is Carlo's to write rather than to publish here.
+outreach/
